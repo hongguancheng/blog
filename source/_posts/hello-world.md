@@ -35,4 +35,4 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 $ hexo deploy
 ```
 
-More info about me: [Deployment](https://hexo.io/docs/deployment.html)
+More info: [Deployment](https://hexo.io/docs/deployment.html)
