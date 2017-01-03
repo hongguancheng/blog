@@ -1,5 +1,6 @@
 ---
 title: 前端工程-自动上传 CDN
+thumbnail: http://honggc.b0.upaiyun.com/blog/aoc7tslb1o8-lauren-mancke.jpg
 ---
 最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 cdn 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 cdn 的工具，大大减少了重复性的工作。
 
