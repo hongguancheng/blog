@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        归档: 2016/11 | CCG&#39;s blog
+        前端工程-自动上传 CDN | CCG&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://localhost:4000">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2016/11 | CCG&#39;s blog">
+    <meta property="og:title" content="前端工程-自动上传 CDN | CCG&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -194,101 +194,236 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-    <div class="locate-thumbnail-symbol"></div>
-    
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
-    }
-</style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://ww2.sinaimg.cn/large/81f090f2gw1f9wdmw1mb9j211e0hy7dl.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/11/15/overwatch-loader/">用 CSS3 做守望先锋的 loader</a></p>
-	</div>
+                <!-- Post TOC -->
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            东西是前阵子写的现在拿出来说下，记得当时守望先锋刚出来没多久，因为电脑比较烂，加载地图速度一直好慢。。。等的时候就一直看着右下角的 loading ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/15/overwatch-loader/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpeg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>11月 15, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/11/15/overwatch-loader/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
+    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
 
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			
 		
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
 		
-    
-    
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
-		<script>
+		
+			<!-- Random Thumbnail -->
+			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            前端工程-自动上传 CDN
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCG</strong>
+        <span>1月 03, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+    
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=前端工程-自动上传 CDN&url=http://localhost:4000//2017/01/03/npm-scripts-cdn/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=前端工程-自动上传 CDN&url=http://localhost:4000//2017/01/03/npm-scripts-cdn/index.html&via=CCG" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+
+    <!-- Share Google+ -->
+    
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://localhost:4000//2017/01/03/npm-scripts-cdn/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
+
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p>最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 cdn 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 cdn 的工具，大大减少了重复性的工作。</p>
+<p>当时用的是 grunt，所以写的是 <a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="external">grunt 的插件</a>，用法好简单，在 grunt build 完之后，执行 grunt enai_upyun 就可以把生成好的目录中的所有文件都上传到 CDN 上，好方便有木有。</p>
+<p>后来我们改用 webpack 作为构建工具，所以我用了类似的方法写了一个 <a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="external">npm script 版</a>的上传工具，用法也差不多，后来我结合了 make 组合了下构建命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">build:</div><div class="line">	npm run build</div><div class="line"></div><div class="line">upload-upyun: build </div><div class="line">	npm run enaiUpyun</div><div class="line">	</div><div class="line">release: </div><div class="line">	make upload-upyun</div></pre></td></tr></table></figure>
+<p>只需要 make release 一句命令就好了。懒的不行哈哈哈哈哈。</p>
+<p>虽然我写的都是基于 upyun 的，但比如其他的服务比如七牛什么的都有相应的 SDK，可以根据自己的需求扩展一下，我把代码都放到了 Github 上了：</p>
+<ul>
+<li><a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="external">grunt-cdn-upyun</a></li>
+<li><a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="external">npm-scripts-cdn</a></li>
+</ul>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #039BE5 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #039BE5 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #039BE5 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/01/03/npm-scripts-cdn/" 
+            data-url="http://localhost:4000/2017/01/03/npm-scripts-cdn/"
+            data-title="前端工程-自动上传 CDN"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/11/15/overwatch-loader/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				

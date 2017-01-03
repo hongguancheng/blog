@@ -4,18 +4,38 @@
   
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://localhost:4000/2016/11/14/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">testads</div></pre></td></tr></table></figure>
-<iframe id="cp_embed_ZOBKrm" src="//codepen.io/CCG/embed/ZOBKrm?height=400&theme-id=0&slug-hash=ZOBKrm&default-tab=html" scrolling="no" frameborder="no" height="400" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      <title><![CDATA[前端工程-自动上传 CDN]]></title>
+      <url>http://localhost:4000/2017/01/03/npm-scripts-cdn/</url>
+      <content type="html"><![CDATA[<p>最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 cdn 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 cdn 的工具，大大减少了重复性的工作。</p>
+<p>当时用的是 grunt，所以写的是 <a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="external">grunt 的插件</a>，用法好简单，在 grunt build 完之后，执行 grunt enai_upyun 就可以把生成好的目录中的所有文件都上传到 CDN 上，好方便有木有。</p>
+<p>后来我们改用 webpack 作为构建工具，所以我用了类似的方法写了一个 <a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="external">npm script 版</a>的上传工具，用法也差不多，后来我结合了 make 组合了下构建命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">build:</div><div class="line">	npm run build</div><div class="line"></div><div class="line">upload-upyun: build </div><div class="line">	npm run enaiUpyun</div><div class="line">	</div><div class="line">release: </div><div class="line">	make upload-upyun</div></pre></td></tr></table></figure>
+<p>只需要 make release 一句命令就好了。懒的不行哈哈哈哈哈。</p>
+<p>虽然我写的都是基于 upyun 的，但比如其他的服务比如七牛什么的都有相应的 SDK，可以根据自己的需求扩展一下，我把代码都放到了 Github 上了：</p>
+<ul>
+<li><a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="external">grunt-cdn-upyun</a></li>
+<li><a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="external">npm-scripts-cdn</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[用 CSS3 做守望先锋的 loader]]></title>
+      <url>http://localhost:4000/2016/11/15/overwatch-loader/</url>
+      <content type="html"><![CDATA[<p>东西是前阵子写的现在拿出来说下，记得当时守望先锋刚出来没多久，因为电脑比较烂，加载地图速度一直好慢。。。等的时候就一直看着右下角的 loading 动画，看着看着就想着能不能用 CSS3 实现出来，后来为了研究这个动画进了好多好多次训练房间，最后弄出来还原度还是挺高的，效果如下：</p>
+<iframe id="cp_embed_EyGjqy" src="//codepen.io/CCG/embed/EyGjqy?height=400&theme-id=0&slug-hash=EyGjqy&default-tab=result" scrolling="no" frameborder="no" height="400" allowtransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
+<p><br> </p>
+<h3 id="中间-logo-部分的实现"><a href="#中间-logo-部分的实现" class="headerlink" title="中间 logo 部分的实现"></a>中间 logo 部分的实现</h3><p>中间的 logo 是由一个大圆环，两个平行四边形还有两个三角形组合而成的，平行四边形用 transform: skew 实现，三角形用 border 就可以了。</p>
+<h3 id="圆环动画效果"><a href="#圆环动画效果" class="headerlink" title="圆环动画效果"></a>圆环动画效果</h3><p>先说说圆环的实现，圆环有几种实现的方法，第一种是直接用 border</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.overwatch</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</div><div class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#B6B8C0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/%E5%9C%86%E7%8E%AF.jpg" alt="圆环"></p>
+<p>这样就能实现一个 1/4 园环，但是动画中的圆环大小不一所以明显不适合。我这边巧用了 clip 实现。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.ring</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">220px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">220px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">6px</span> solid <span class="built_in">rgba</span>(161, 164, 176, 0.5);</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">clip</span>: <span class="built_in">rect</span>(0px, 142px, 100px, 90px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/%E5%9C%86%E7%8E%AF2.jpg" alt="圆环"></p>
+<p>这样就可以简单实现一些小的圆环了，但是用这种圆环来做动画效果非常的蛋疼，要动过 clip 的变化来使圆环大小变化，而且在圆环边缘位置的切线并不是垂直的，不够美观，所以我这里只用这种方法来实现一些小变化不大的圆环，而大的变化大的圆环我用了实现圆形进度条的方法来实现，具体 <a href="https://www.xiabingbao.com/css/2015/07/27/css3-animation-circle.html" target="_blank" rel="external">看这里</a>。</p>
+<p>最后添加动画效果就可以实现最终效果了，出了这个我还用了类似的方法实现了<a href="http://codepen.io/CCG/pen/KrANmJ" target="_blank" rel="external">另一个守望先锋的 loading 动画</a>，还原度也是挺好的。</p>
 ]]></content>
     </entry>
     
