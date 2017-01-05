@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        归档: 2016 | CCG&#39;s blog
+        年底啦！总结下吧 | CCG&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://localhost:4000">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2016 | CCG&#39;s blog">
+    <meta property="og:title" content="年底啦！总结下吧 | CCG&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -194,168 +194,240 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-    <div class="locate-thumbnail-symbol"></div>
+                <!-- Post TOC -->
+
     
-    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-Good"><span class="post-toc-number">1.</span> <span class="post-toc-text">The Good</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前端工程化"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">前端工程化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#库-框架选型"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">库/框架选型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#简单构建优化和模块化开发"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">简单构建优化和模块化开发</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自动化"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">自动化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#积累"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">积累</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后台前端框架"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">后台前端框架</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#The-Bad"><span class="post-toc-number">2.</span> <span class="post-toc-text">The Bad</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#展望"><span class="post-toc-number">3.</span> <span class="post-toc-text">展望</span></a></li></ol>
 		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
-    }
-</style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		<!-- Custom Thumbnail -->
 		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://honggc.b0.upaiyun.com/blog/tpps5s-_bjm-jerry-kiesewetter.jpg)">
 	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/12/30/2016-summary/">年底啦！总结下吧</a></p>
-	</div>
+        <p class="article-headline-p">
+            年底啦！总结下吧
+        </p>
+    </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            不知不觉一年就过去了，这是我来公司的第二年，比起上一年今年在前端这一块变化还是非常的大的，可以说整个前端变化都非常的大，我们公司的前端也跟上了整体的...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/12/30/2016-summary/" target="_self">继续阅读</a>
-        </span>
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>12月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/12/30/2016-summary/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCG</strong>
+        <span>12月 30, 2016</span>
     </div>
-            
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+
+    
+    
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=年底啦！总结下吧&url=http://localhost:4000//2016/12/30/2016-summary/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=年底啦！总结下吧&url=http://localhost:4000//2016/12/30/2016-summary/index.html&via=CCG" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+
+    <!-- Share Google+ -->
+    
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://localhost:4000//2016/12/30/2016-summary/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p>不知不觉一年就过去了，这是我来公司的第二年，比起上一年今年在前端这一块变化还是非常的大的，可以说整个前端变化都非常的大，我们公司的前端也跟上了整体的步伐。接下来是对今年的一些思考和展望。</p>
+<h3 id="The-Good"><a href="#The-Good" class="headerlink" title="The Good"></a>The Good</h3><p>首先说说好的方面吧，去年我们前端是只有我一个人，今年前端团队终于多了两个人，在前端方面我也没有像之前那么随意了，更加注重团队的发展和怎么才能让我们前端小组开发的更爽，工作效率更高。</p>
+<p>总的来说 2016 年主要的个人贡献就是完成了前端工程的基础构建。</p>
+<h4 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h4><p>回想起去年我刚来的时候，前端什么都没有，还是用着比较传统的方式，移动端用的是 zepto，后台用的是 jquery + bootstrap。到年中的时候才在移动端用了些自动化的工具。当时还没有前端工程化的概念。自从去年年末接触到 react 的时候才开始觉得我们的前端需要有所改变，不再是单纯做一个切图仔。</p>
+<h5 id="库-框架选型"><a href="#库-框架选型" class="headerlink" title="库/框架选型"></a>库/框架选型</h5><p>在 520 活动的时候我们就开始用了 vue.js 作为前端的主要框架作为移动端页面的主要框架，解放了不少生产力，通过前端组件化可以合理的对 UI 组件进行分治，大大加强了代码的复用率，也方便了日后的维护。</p>
+<h5 id="简单构建优化和模块化开发"><a href="#简单构建优化和模块化开发" class="headerlink" title="简单构建优化和模块化开发"></a>简单构建优化和模块化开发</h5><p>在选用 vue.js 之前我是用 grunt 来做为构建工具，现在因为项目需要进行模块化开发，最后选用了 webpack 作为构建工具，模块化开发的最大价值应该是分治，因为 Webkit 宣布默认打开 ES6 module 功能，CommonJS、AMD、UMD以及所有模块加载器全部过时，我们选用了 ES6 module。</p>
+<h5 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h5><p>还记得之前有个同事说过，如果你一件事情重复做了 3 遍就需要想办法去做优化，也就是 Don`t repeat your self。前端的自动化是通过 make 加上 npm script 组合的一连串命令执行预先写好的 node 代码完成自动化构建、上传静态文件、自动分环境等操作，上线只需一个命令加上去 apolo 点一下就行了。</p>
+<p>同时用 Yeoman 编写了前端项目的脚手架，从此新项目开始就不用傻傻的去复制就项目的代码了，同时还可以再创建项目的时候加入一些配置，按照需求创建项目。</p>
+<h5 id="积累"><a href="#积累" class="headerlink" title="积累"></a>积累</h5><p>我在项目中加入了一个各个项目公用的 git submodule。一年之中不断的写了许多公用的代码和工具的方法，包括了一些简单的弹窗和 Ajax 模块等，这个仓库以后一定还会慢慢的积累，方便日后的开发。对于不能放在公共仓库的代码就放在脚手架内。</p>
+<h4 id="后台前端框架"><a href="#后台前端框架" class="headerlink" title="后台前端框架"></a>后台前端框架</h4><p>之前用的是 react + reflux，今天在 6.0 改版的时候决定重新写后台，借此机会我换了下结构，用的是 react + redux，虽然项目看起来好像复杂了不少，不过理解了之后一定是有利于项目的开发和日后的维护的。同时对之前简单的构建工具的配置进行了整理，开发起来会更加的方便。</p>
+<h3 id="The-Bad"><a href="#The-Bad" class="headerlink" title="The Bad"></a>The Bad</h3><p>好的说完了说说做的不好的吧。</p>
+<ul>
+<li>首先是我的个人问题，工作的时候有时会有点小情绪，这个需要克制一下。</li>
+<li>工作缺少自测，其实这点是必须做的，但是我常常会忽略或者是做的不够认真，以后开发如果条件允许就去借一些手机在身边一起开发</li>
+<li>应该及时重构代码而不是“到时候”，提升代码质量。</li>
+</ul>
+<h3 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h3><p>今年前端团队终于小有规模，希望在来年我们能共同进步吧。</p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #039BE5 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #039BE5 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #039BE5 !important;
     }
 </style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://ww2.sinaimg.cn/large/81f090f2gw1f9wdmw1mb9j211e0hy7dl.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/11/15/overwatch-loader/">用 CSS3 做守望先锋的 loader</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            东西是前阵子写的现在拿出来说下，记得当时守望先锋刚出来没多久，因为电脑比较烂，加载地图速度一直好慢。。。等的时候就一直看着右下角的 loading ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/15/overwatch-loader/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>11月 15, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/11/15/overwatch-loader/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2016/12/30/2016-summary/" 
+            data-url="http://localhost:4000/2016/12/30/2016-summary/"
+            data-title="年底啦！总结下吧"></div>
+    <!-- 多说评论框 end -->
 </div>
 
-		
-		
-    
-    
-	
-		<script>
-    
-    var randomNum;
-    
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + 'http://honggc.b0.upaiyun.com/blog/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
-    
-</script>
 
-	
 
-</div>
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/03/npm-scripts-cdn/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/11/15/overwatch-loader/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
