@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        归档 | CCG&#39;s blog
+        手把手教你撸一个泡妞神奇 | CCG&#39;s blog
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://localhost:4000">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | CCG&#39;s blog">
+    <meta property="og:title" content="手把手教你撸一个泡妞神奇 | CCG&#39;s blog">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -194,371 +194,238 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-    <div class="locate-thumbnail-symbol"></div>
+                <!-- Post TOC -->
+
     
-    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">1.</span> <span class="post-toc-text">具体实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#画字"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">画字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#点的运动"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">点的运动</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#星星闪烁效果"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">星星闪烁效果</span></a></li></ol></li></ol>
 		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
-    }
-</style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		<!-- Custom Thumbnail -->
 		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://honggc.b0.upaiyun.com/blog/stars.jpg)">
 	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2017/01/11/romantic-words/">手把手教你撸一个泡妞神奇</a></p>
-	</div>
+        <p class="article-headline-p">
+            手把手教你撸一个泡妞神奇
+        </p>
+    </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            用 canvas 做的一个漫天星空，星星变成字，自己把自己感动的表白页面
-其实东西是一年前写的，二话不说，先看
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/11/romantic-words/" target="_self">继续阅读</a>
-        </span>
+	
+
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>1月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/01/11/romantic-words/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CCG</strong>
+        <span>1月 11, 2017</span>
     </div>
-            
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+
+    <!-- Qrcode -->
+    
+
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+
+    
+    <!-- Leancloud Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="/2017/01/11/romantic-words/" class="leancloud-views_num" data-flag-title="手把手教你撸一个泡妞神奇">
+     &nbsp;浏览量
+</span>
+        </li>
+    </a>
+    
+
+    
+    
+    <!-- Share Weibo -->
+    
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=手把手教你撸一个泡妞神奇&url=http://localhost:4000//2017/01/11/romantic-words/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+    
+
+    <!-- Share Twitter -->
+    
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=手把手教你撸一个泡妞神奇&url=http://localhost:4000//2017/01/11/romantic-words/index.html&via=CCG" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+
+    <!-- Share Google+ -->
+    
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://localhost:4000//2017/01/11/romantic-words/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<p>用 canvas 做的一个漫天星空，星星变成字，自己把自己感动的表白页面</p>
+<p>其实东西是一年前写的，二话不说，先看<a href="http://honggc.b0.upaiyun.com/romantic-words/index.html" target="_blank" rel="external">效果</a>（点击屏幕可显示下一句）</p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/starsss.gif" alt="stars"></p>
+<p>当时我是在 codepan 上看到一个很漂亮的 <a href="http://codepen.io/iamfrontender/details/yNVPeX" target="_blank" rel="external">pan</a>，漫天星空，男孩独自看着，当时我就想如果可以把星星变成字就好了，于是就写了字的那一部分，背景还是用原来的，写完就用来表白了哈哈哈哈，效果怎么样嘛~~~反正就是追到了，哇哈哈哈哈，接下来说说是怎么做的吧。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>相信好多人一看就知道应该是用 canvas 做的了，具体做法就是在 canvas 画很多很多的点，然后根据你要显示的字准确排列，最后实现最后的效果。</p>
+<h4 id="画字"><a href="#画字" class="headerlink" title="画字"></a>画字</h4><p>首先我在画布上画了 1200 个点，用这些点来组成我们要显示的字，用不到的字就隐藏起来。在组成字之前我们需要知道每个点的具体的位置，这里的做法是首先在画布上用 ctx.fillText() 先画出我们要显示的字，然后用 ctx.getImageData() 得到画布上每个像素点的信息，在把这些像素点的信息转化为我们每个点的坐标，最后就能通过点来显示我们的字了，具体看代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, CANVASWIDTH, CANVASHEIGHT)</div><div class="line">  ctx.fillStyle = <span class="string">'rgb(255, 255, 255)'</span></div><div class="line">  ctx.textBaseline = <span class="string">'middle'</span></div><div class="line">  ctx.font = textSize + <span class="string">'px \'Avenir\', \'Helvetica Neue\', \'Arial\', \'sans-serif\''</span></div><div class="line">  ctx.fillText(text, (CANVASWIDTH - ctx.measureText(text).width) * <span class="number">0.5</span>, CANVASHEIGHT * <span class="number">0.5</span>)</div><div class="line"></div><div class="line">  <span class="comment">// 得到画布矩形的像素数据</span></div><div class="line">  <span class="keyword">let</span> imgData = ctx.getImageData(<span class="number">0</span>, <span class="number">0</span>, CANVASWIDTH, CANVASHEIGHT)</div><div class="line">  particleText(imgData)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">particleText</span> (<span class="params">imgData</span>) </span>&#123;</div><div class="line">  <span class="comment">// 点坐标获取</span></div><div class="line">  <span class="keyword">var</span> pxls = []</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> w = CANVASWIDTH; w &gt; <span class="number">0</span>; w -= <span class="number">3</span>) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> h = <span class="number">0</span>; h &lt; CANVASHEIGHT; h += <span class="number">3</span>) &#123;</div><div class="line">      <span class="keyword">var</span> index = (w + h * (CANVASWIDTH)) * <span class="number">4</span></div><div class="line">      <span class="keyword">if</span> (imgData.data[index] &gt; <span class="number">1</span>) &#123;</div><div class="line">        pxls.push([w, h])</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="comment">// 略</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="点的运动"><a href="#点的运动" class="headerlink" title="点的运动"></a>点的运动</h4><p>点在初始化的时候会被随机分布到画布的各个位置，在点的坐标确定之后，就会让点慢慢移动到目的地，具体的做法是在每一帧中根据点的上一帧的位置和点的目的地位置计算得出在该帧中点的坐标，让点慢慢的移动到目的地。</p>
+<h4 id="星星闪烁效果"><a href="#星星闪烁效果" class="headerlink" title="星星闪烁效果"></a>星星闪烁效果</h4><p>这个效果实现很简单，就是让星星不停的震动，具体就是让点的目的地坐标不停的进行小范围的偏移。具体请看代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 每次通过加上 Math.random() * 15 对目的地做偏移/</span></div><div class="line">X = pxls[i - <span class="number">1</span>][<span class="number">0</span>] - p.px + <span class="built_in">Math</span>.random() * <span class="number">15</span></div><div class="line">Y = pxls[i - <span class="number">1</span>][<span class="number">1</span>] - p.py + <span class="built_in">Math</span>.random() * <span class="number">15</span></div></pre></td></tr></table></figure>
+<p>代码都放到了 <a href="https://github.com/hongguancheng/romantic-words" target="_blank" rel="external">github</a> 上了，祝大家表白成功哈哈哈哈。</p>
+<p>demo 演示：<a href="http://honggc.b0.upaiyun.com/romantic-words/index.html" target="_blank" rel="external">http://honggc.b0.upaiyun.com/romantic-words/index.html</a></p>
+<p>github 地址：<a href="https://github.com/hongguancheng/romantic-words" target="_blank" rel="external">https://github.com/hongguancheng/romantic-words</a></p>
+<p>背景地址：<a href="http://codepen.io/iamfrontender/details/yNVPeX" target="_blank" rel="external">http://codepen.io/iamfrontender/details/yNVPeX</a></p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #039BE5 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #039BE5 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #039BE5 !important;
     }
 </style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://honggc.b0.upaiyun.com/blog/oaqk7qqnh_c-patrick-tomasso.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2017/01/09/再学一遍 this/">再学一遍 this</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近在看《你不知道的 Javascript》，看到了关于 this 的介绍，收获良多。这里分享一下书中关于 this 的介绍。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/09/再学一遍 this/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>1月 09, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/01/09/再学一遍 this/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/01/11/romantic-words/" 
+            data-url="http://localhost:4000/2017/01/11/romantic-words/"
+            data-title="手把手教你撸一个泡妞神奇"></div>
+    <!-- 多说评论框 end -->
 </div>
 
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
-    }
-</style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://honggc.b0.upaiyun.com/blog/aoc7tslb1o8-lauren-mancke.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2017/01/03/npm-scripts-cdn/">前端工程-自动上传 CDN</a></p>
-	</div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 CDN 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/03/npm-scripts-cdn/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>1月 03, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+
                 
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/01/03/npm-scripts-cdn/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/09/再学一遍 this/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
         </div>
     </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
-    }
-</style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://honggc.b0.upaiyun.com/blog/tpps5s-_bjm-jerry-kiesewetter.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/12/30/2016-summary/">年底啦！总结下吧</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            不知不觉一年就过去了，这是我来公司的第二年，比起上一年今年在前端这一块变化还是非常的大的，可以说整个前端变化都非常的大，我们公司的前端也跟上了整体的...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/12/30/2016-summary/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>12月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/12/30/2016-summary/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<style type="text/css">
-    .post_entry-module{
-        min-height: 490px !important;
-    }
-</style>
-<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://ww2.sinaimg.cn/large/81f090f2gw1f9wdmw1mb9j211e0hy7dl.jpg)">
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/11/15/overwatch-loader/">用 CSS3 做守望先锋的 loader</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            东西是前阵子写的现在拿出来说下，记得当时守望先锋刚出来没多久，因为电脑比较烂，加载地图速度一直好慢。。。等的时候就一直看着右下角的 loading ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/11/15/overwatch-loader/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="CCG's avatar">
-            </div>
-            <div>
-                <strong>CCG</strong>
-                <span>11月 15, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/11/15/overwatch-loader/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
-    
-    var randomNum;
-    
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + 'http://honggc.b0.upaiyun.com/blog/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
-    
-</script>
-
-	
-
-</div>
 
 				
 				
