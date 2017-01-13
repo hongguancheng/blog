@@ -80,7 +80,6 @@ var obj = {
   a: 2,
   foo: foo
 }
-
 obj.foo() // 2
 ```
 
