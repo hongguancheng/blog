@@ -2,6 +2,7 @@
 title: 用 CSS3 做守望先锋的 loader
 thumbnail: http://ww2.sinaimg.cn/large/81f090f2gw1f9wdmw1mb9j211e0hy7dl.jpg
 <!-- thumbnail: http://ww3.sinaimg.cn/large/81f090f2gw1f9wflamsnzj212y0ksqe6.jpg -->
+date: 1479139200000
 ---
 东西是前阵子写的现在拿出来说下，记得当时守望先锋刚出来没多久，因为电脑比较烂，加载地图速度一直好慢。。。等的时候就一直看着右下角的 loading 动画，看着看着就想着能不能用 CSS3 实现出来，后来为了研究这个动画进了好多好多次训练房间，最后弄出来还原度还是挺高的，效果如下：
 

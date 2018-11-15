@@ -1,7 +1,7 @@
 ---
 title: 再学一遍 this
 thumbnail: http://honggc.b0.upaiyun.com/blog/oaqk7qqnh_c-patrick-tomasso.jpg
-date: 1483956542000
+date: 1483891200000
 ---
 
 最近在看《你不知道的 Javascript》，看到了关于 this 的介绍，收获良多。这里分享一下书中关于 this 的介绍。

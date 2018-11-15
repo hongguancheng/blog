@@ -1,6 +1,7 @@
 ---
 title: 手把手教你撸一个泡妞神奇
 thumbnail: http://honggc.b0.upaiyun.com/blog/stars.jpg
+date: 1484064000000
 ---
 
 用 canvas 做的一个漫天星空，星星变成字，自己把自己感动的表白页面
