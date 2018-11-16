@@ -8,7 +8,7 @@ date: 1542177334000
 
 直接看最终效果
 
-* [CodePen Demo -- CSS Solar System](https://codepen.io/CCG/pen/wQdqvo)
+* [CodePen Demo -- CSS Solar System](https://codepen.io/CCG/pen/LJrPVQ)
 
 #### 先从背景开始
 
@@ -181,6 +181,6 @@ pug 和 sass 是用来做循环的好工具，在实现背景的星星的时候�
 
 最终效果
 
-* [CodePen Demo -- CSS Solar System](https://codepen.io/CCG/pen/wQdqvo)
+* [CodePen Demo -- CSS Solar System](https://codepen.io/CCG/pen/LJrPVQ)
 
 这样我们就完成了我们的太阳系插画了，这里面多次用到 pug 和 sass 帮我们去做一些重复的工作，且介绍了一些 sass 实用的用法，希望能帮助到大家。

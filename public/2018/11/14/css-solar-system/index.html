@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p4.jpg">
 <meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p5.jpg">
 <meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p6.jpg">
-<meta property="og:updated_time" content="2018-11-15T09:49:58.137Z">
+<meta property="og:updated_time" content="2018-11-16T02:29:20.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何用纯 css 实现复杂图片">
 <meta name="twitter:description" content="一直以来我对一些漂亮的设计和图片都很感兴趣，也竟然会想着用 css 去把他们实现出来来提升一下对 css 的掌握程度，下面是我从一位设计小哥偷来的一张图片👻，今天讲的就是如何用纯 css 去实现它。  直接看最终效果  CodePen Demo – CSS Solar System  先从背景开始背景我用了 radial-gradient 来实现背景的渐变效果。我用了 sass 的一些函数">
@@ -137,7 +137,7 @@
 <p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/psd.jpg" alt="psd"></p>
 <p>直接看最终效果</p>
 <ul>
-<li><a href="https://codepen.io/CCG/pen/wQdqvo" target="_blank" rel="noopener">CodePen Demo – CSS Solar System</a></li>
+<li><a href="https://codepen.io/CCG/pen/LJrPVQ" target="_blank" rel="noopener">CodePen Demo – CSS Solar System</a></li>
 </ul>
 <h4 id="先从背景开始"><a href="#先从背景开始" class="headerlink" title="先从背景开始"></a>先从背景开始</h4><p>背景我用了 radial-gradient 来实现背景的渐变效果。我用了 sass 的一些函数来方便取色。</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.solar-system</span>&#123;</span><br><span class="line">  <span class="comment">// 一些代码</span></span><br><span class="line">  <span class="attribute">background</span>: radial-gradient(<span class="number">600px</span> circle at <span class="number">0%</span> <span class="number">50%</span>, transparentize(<span class="variable">$sun-light</span>, <span class="number">0.9</span>), transparent),</span><br><span class="line">              radial-gradient(<span class="number">172px</span> circle at <span class="number">0%</span> <span class="number">50%</span>, transparentize(<span class="number">#F2CEA5</span>, .<span class="number">8</span>), transparentize(<span class="number">#786755</span>, .<span class="number">8</span>) <span class="number">171px</span>, transparent <span class="number">172px</span>),</span><br><span class="line">              radial-gradient(<span class="number">131px</span> circle at <span class="number">0%</span> <span class="number">50%</span>, transparentize(<span class="number">#F7D2A9</span>, .<span class="number">8</span>), transparentize(<span class="number">#A99075</span>, .<span class="number">8</span>) <span class="number">130px</span>, transparent <span class="number">131px</span>),</span><br><span class="line">              <span class="variable">$background</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -160,7 +160,7 @@
 <p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/p6.jpg" alt="tu2"></p>
 <p>最终效果</p>
 <ul>
-<li><a href="https://codepen.io/CCG/pen/wQdqvo" target="_blank" rel="noopener">CodePen Demo – CSS Solar System</a></li>
+<li><a href="https://codepen.io/CCG/pen/LJrPVQ" target="_blank" rel="noopener">CodePen Demo – CSS Solar System</a></li>
 </ul>
 <p>这样我们就完成了我们的太阳系插画了，这里面多次用到 pug 和 sass 帮我们去做一些重复的工作，且介绍了一些 sass 实用的用法，希望能帮助到大家。</p>
 
