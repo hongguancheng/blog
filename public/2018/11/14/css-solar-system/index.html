@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>如何用纯 css 实现复杂图片 | CCG&#39;s blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="ccg,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+  
+
+  <meta name="description" content="一直以来我对一些漂亮的设计和图片都很感兴趣，也竟然会想着用 css 去把他们实现出来来提升一下对 css 的掌握程度，下面是我从一位设计小哥偷来的一张图片👻，今天讲的就是如何用纯 css 去实现它。  直接看最终效果  CodePen Demo – CSS Solar System  先从背景开始背景我用了 radial-gradient 来实现背景的渐变效果。我用了 sass 的一些函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用纯 css 实现复杂图片">
+<meta property="og:url" content="http://localhost:4000/2018/11/14/css-solar-system/index.html">
+<meta property="og:site_name" content="CCG&#39;s blog">
+<meta property="og:description" content="一直以来我对一些漂亮的设计和图片都很感兴趣，也竟然会想着用 css 去把他们实现出来来提升一下对 css 的掌握程度，下面是我从一位设计小哥偷来的一张图片👻，今天讲的就是如何用纯 css 去实现它。  直接看最终效果  CodePen Demo – CSS Solar System  先从背景开始背景我用了 radial-gradient 来实现背景的渐变效果。我用了 sass 的一些函数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/psd.jpg">
+<meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p2.jpg">
+<meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p3.jpg">
+<meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p4.jpg">
+<meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p5.jpg">
+<meta property="og:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/p6.jpg">
+<meta property="og:updated_time" content="2018-11-15T09:49:58.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用纯 css 实现复杂图片">
+<meta name="twitter:description" content="一直以来我对一些漂亮的设计和图片都很感兴趣，也竟然会想着用 css 去把他们实现出来来提升一下对 css 的掌握程度，下面是我从一位设计小哥偷来的一张图片👻，今天讲的就是如何用纯 css 去实现它。  直接看最终效果  CodePen Demo – CSS Solar System  先从背景开始背景我用了 radial-gradient 来实现背景的渐变效果。我用了 sass 的一些函数">
+<meta name="twitter:image" content="http://honggc.b0.upaiyun.com/blog/solor-system/psd.jpg">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" target="_self">
+            博客
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#先从背景开始"><span class="toc-text">先从背景开始</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#行星的实现"><span class="toc-text">行星的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#小行星带"><span class="toc-text">小行星带</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-css-solar-system" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">如何用纯 css 实现复杂图片</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.11.14</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>CCG</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2018/11/14/css-solar-system/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>一直以来我对一些漂亮的设计和图片都很感兴趣，也竟然会想着用 css 去把他们实现出来来提升一下对 css 的掌握程度，下面是我从一位设计小哥偷来的一张图片👻，今天讲的就是如何用纯 css 去实现它。</p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/psd.jpg" alt="psd"></p>
+<p>直接看最终效果</p>
+<ul>
+<li><a href="https://codepen.io/CCG/pen/wQdqvo" target="_blank" rel="noopener">CodePen Demo – CSS Solar System</a></li>
+</ul>
+<h4 id="先从背景开始"><a href="#先从背景开始" class="headerlink" title="先从背景开始"></a>先从背景开始</h4><p>背景我用了 radial-gradient 来实现背景的渐变效果。我用了 sass 的一些函数来方便取色。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.solar-system</span>&#123;</span><br><span class="line">  <span class="comment">// 一些代码</span></span><br><span class="line">  <span class="attribute">background</span>: radial-gradient(<span class="number">600px</span> circle at <span class="number">0%</span> <span class="number">50%</span>, transparentize(<span class="variable">$sun-light</span>, <span class="number">0.9</span>), transparent),</span><br><span class="line">              radial-gradient(<span class="number">172px</span> circle at <span class="number">0%</span> <span class="number">50%</span>, transparentize(<span class="number">#F2CEA5</span>, .<span class="number">8</span>), transparentize(<span class="number">#786755</span>, .<span class="number">8</span>) <span class="number">171px</span>, transparent <span class="number">172px</span>),</span><br><span class="line">              radial-gradient(<span class="number">131px</span> circle at <span class="number">0%</span> <span class="number">50%</span>, transparentize(<span class="number">#F7D2A9</span>, .<span class="number">8</span>), transparentize(<span class="number">#A99075</span>, .<span class="number">8</span>) <span class="number">130px</span>, transparent <span class="number">131px</span>),</span><br><span class="line">              <span class="variable">$background</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pug 和 sass 是用来做循环的好工具，在实现背景的星星的时候，首先用 pug 循环 20 个 element，sass 来循环 css 选择器的部分并且 sass 还能创建一些随机数来实现星星的随机分布。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.stars</span><br><span class="line">  - for (var i = 0; i &lt; 20; i++)</span><br><span class="line">    .star</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.stars</span>&#123;</span><br><span class="line">  @<span class="keyword">for</span> <span class="variable">$i</span> from 1 through (<span class="number">20</span>) &#123;</span><br><span class="line">    <span class="variable">$starSize</span>: random(<span class="number">4</span>);</span><br><span class="line">    <span class="variable">$randomX</span>: random(<span class="variable">$systemWidth</span>);</span><br><span class="line">    <span class="variable">$randomY</span>: random(<span class="variable">$systemHeight</span>);</span><br><span class="line">    <span class="selector-class">.star</span>:nth-of-type(#&#123;<span class="variable">$i</span>&#125;) &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="variable">$starSize</span> + px;</span><br><span class="line">      <span class="attribute">height</span>: <span class="variable">$starSize</span> + px;</span><br><span class="line">      <span class="attribute">top</span>: <span class="variable">$randomY</span> + px;</span><br><span class="line">      <span class="attribute">left</span>: <span class="variable">$randomX</span> + px;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#C3E1FC</span>;</span><br><span class="line">      <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> random(<span class="number">3</span>) + <span class="number">3</span> + px <span class="number">#C3E1FC</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">opacity</span>: (random(<span class="number">6</span>) + <span class="number">4</span>) / <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来在加多几天行星公转的辅助线就完成了我们的背景</p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/p2.jpg" alt="背景"></p>
+<h4 id="行星的实现"><a href="#行星的实现" class="headerlink" title="行星的实现"></a>行星的实现</h4><p>以小行星带靠左的行星可以简单用一个标签实现，用 box-shadow 来实现阴影的部分。这里简单举一个🌰</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mercury</span>&#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">172px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">24px</span>;</span><br><span class="line">  <span class="attribute">transform</span>: translate(<span class="number">0</span>, -<span class="number">50%</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$mercury-color</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: inset -<span class="number">4px</span> <span class="number">0px</span> <span class="number">0px</span> darken(<span class="variable">$mercury-color</span>, <span class="number">20%</span>),</span><br><span class="line">              <span class="number">0px</span> <span class="number">0px</span> <span class="number">4px</span> lighten(<span class="variable">$mercury-color</span>, <span class="number">10%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>小行星带靠右的行星跟左侧的主要区别在于球面上弧形的线条，这里还是用到了 box-shadow，用一子元素的多重阴影来实现</p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/p3.jpg" alt="tu1"></p>
+<p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/p4.jpg" alt="tu2"></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.jupiter</span>&#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">440px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">transform</span>: translate(<span class="number">0</span>, -<span class="number">50%</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$jupiter-color</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">4px</span> lighten(<span class="variable">$jupiter-color</span>, <span class="number">10%</span>);</span><br><span class="line">  <span class="selector-class">.decoration</span>&#123;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">130px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">transform</span>: translate(-<span class="number">50%</span>, <span class="number">0</span>) rotate(-<span class="number">15deg</span>);</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">65px</span> <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">10px</span> <span class="number">#BEB7AF</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">14px</span> <span class="variable">$jupiter-color</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">16px</span> <span class="number">#B69C87</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">20px</span> <span class="variable">$jupiter-color</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">28px</span> <span class="number">#B69C87</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">32px</span> <span class="variable">$jupiter-color</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">48px</span> <span class="number">#B69C87</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">50px</span> <span class="variable">$jupiter-color</span>,</span><br><span class="line">                <span class="number">0px</span> <span class="number">60px</span> <span class="number">#BEB7AF</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="小行星带"><a href="#小行星带" class="headerlink" title="小行星带"></a>小行星带</h4><p>小行星带跟背景的星星差不多也是用 pug 循环创建出多个 element，用 sass 来循环写出每个 element 的 css。但是有一点不同的是小行星是在固定的轨道中随机的分布而不像背景星星全屏随机分布。这里同样是要借助 sass 的帮忙，已知小行星到太阳的距离，先随机出一个坐标 Y 然后通过勾股定理计算出相应的坐标 X 值。因为 sass 并没有 sqrt 方法，我们需要自己去实现。得到 Y 和 X 的值后还需要加上一个偏移值。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@function sqrt (<span class="variable">$x</span>) &#123;</span><br><span class="line">  @<span class="keyword">if</span> <span class="variable">$x</span> &lt; 0 &#123;</span><br><span class="line">      @<span class="keyword">warn</span> <span class="string">"Argument for `sqrt()` must be a positive number."</span>;</span><br><span class="line">      @return null;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$ret</span>: <span class="number">1</span>;</span><br><span class="line">  @<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 24 &#123;</span><br><span class="line">      <span class="variable">$ret</span>: <span class="variable">$ret</span> - (<span class="variable">$ret</span> * <span class="variable">$ret</span> - <span class="variable">$x</span>) / (<span class="number">2</span> * <span class="variable">$ret</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  @return <span class="variable">$ret</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.asteroid-belt</span>&#123;</span><br><span class="line">  @<span class="keyword">for</span> <span class="variable">$i</span> from 1 through (<span class="number">140</span>) &#123;</span><br><span class="line">    <span class="variable">$asteroidSize</span>: random(<span class="number">2</span>);</span><br><span class="line">    <span class="variable">$asteroidYPosition</span>: random(<span class="number">300</span>);</span><br><span class="line">    <span class="variable">$randomX</span>: random(<span class="number">20</span>) - <span class="number">10</span>;</span><br><span class="line">    <span class="variable">$randomY</span>: random(<span class="number">20</span>) - <span class="number">10</span>;</span><br><span class="line">    <span class="selector-class">.asteroid</span>:nth-of-type(#&#123;<span class="variable">$i</span>&#125;) &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="variable">$asteroidSize</span> + px;</span><br><span class="line">      <span class="attribute">height</span>: <span class="variable">$asteroidSize</span> + px;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">300</span> + <span class="variable">$asteroidYPosition</span> + <span class="variable">$randomY</span> + px;</span><br><span class="line">      <span class="attribute">left</span>: sqrt(<span class="variable">$asteroid-belt-radius</span> * <span class="variable">$asteroid-belt-radius</span> - <span class="variable">$asteroidYPosition</span> * <span class="variable">$asteroidYPosition</span>) + <span class="variable">$randomX</span> + px;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">      <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">2px</span> <span class="number">#fff</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">opacity</span>: .<span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/p5.jpg" alt="tu2"></p>
+<p>但是这时小行星只会在下发一侧分布，我们还需让小行星上下分布，通过 sass 的 random 加 条件判断就可实现。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.asteroid-belt</span>&#123;</span><br><span class="line">  @<span class="keyword">for</span> <span class="variable">$i</span> from 1 through (<span class="number">140</span>) &#123;</span><br><span class="line">    <span class="variable">$asteroidSize</span>: random(<span class="number">2</span>);</span><br><span class="line">    <span class="variable">$asteroidYPosition</span>: random(<span class="number">300</span>);</span><br><span class="line">    <span class="variable">$randomX</span>: random(<span class="number">20</span>) - <span class="number">10</span>;</span><br><span class="line">    <span class="variable">$randomY</span>: random(<span class="number">20</span>) - <span class="number">10</span>;</span><br><span class="line">    <span class="selector-class">.asteroid</span>:nth-of-type(#&#123;<span class="variable">$i</span>&#125;) &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="variable">$asteroidSize</span> + px;</span><br><span class="line">      <span class="attribute">height</span>: <span class="variable">$asteroidSize</span> + px;</span><br><span class="line">      @<span class="keyword">if</span> random(<span class="number">2</span>) == 1 &#123;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">300</span> + <span class="variable">$asteroidYPosition</span> + <span class="variable">$randomY</span> + px;</span><br><span class="line">      &#125; @<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">300</span> + <span class="variable">$asteroidYPosition</span> * -<span class="number">1</span> + <span class="variable">$randomY</span> + px;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="attribute">left</span>: sqrt(<span class="variable">$asteroid-belt-radius</span> * <span class="variable">$asteroid-belt-radius</span> - <span class="variable">$asteroidYPosition</span> * <span class="variable">$asteroidYPosition</span>) + <span class="variable">$randomX</span> + px;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">      <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">2px</span> <span class="number">#fff</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">opacity</span>: .<span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://honggc.b0.upaiyun.com/blog/solor-system/p6.jpg" alt="tu2"></p>
+<p>最终效果</p>
+<ul>
+<li><a href="https://codepen.io/CCG/pen/wQdqvo" target="_blank" rel="noopener">CodePen Demo – CSS Solar System</a></li>
+</ul>
+<p>这样我们就完成了我们的太阳系插画了，这里面多次用到 pug 和 sass 帮我们去做一些重复的工作，且介绍了一些 sass 实用的用法，希望能帮助到大家。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">微信扫一扫，支持一下</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/p1.jpg" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" target="_self">
+              博客
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://localhost:4000/2018/11/14/css-solar-system/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

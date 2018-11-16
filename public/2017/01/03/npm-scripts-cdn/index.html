@@ -1,923 +1,259 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <!-- Title -->
-    
-    <title>
-        前端工程-自动上传 CDN | CCG&#39;s blog
-    </title>
-    
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="http://honggc.b0.upaiyun.com/blog/favicon.png">
-    <link rel="icon" sizes="192x192" href="http://honggc.b0.upaiyun.com/blog/favicon.png">
-    <link rel="apple-touch-icon" href="http://honggc.b0.upaiyun.com/blog/favicon.png">
-    
-    <!-- Meta & INfo -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#039BE5">
-    <meta name="author" content="CCG">
-    <meta name="description" content="null">
-    <meta name="keywords" content="CCG">
-    
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-    
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="CCG&#39;s blog">
-    
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://localhost:4000">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="前端工程-自动上传 CDN | CCG&#39;s blog">
-    <meta property="og:description" content="null">
-    
-     <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-        
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-    
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
 
 
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "SF Compact Display", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #039BE5
-    }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #039BE5 !important
-    }
-    
-	/* Sidebar User Drop Down Menu Text Color */
-	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #039BE5 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #039BE5 !important
-    }
-    
-    .toTop{
-        background: #757575 !important
-    }
-		
-	.material-layout .material-post>.material-nav,
-	.material-layout .material-index>.material-nav,
-	.material-nav a{
-		color: #757575;
-	}
-		
-	#scheme-Paradox .MD-burger-layer {
-		background-color: #757575;
-	}
-
-	#scheme-Paradox #post-toc-trigger-btn{
-		color: #757575;
-	}
-	
-	.post-toc a:hover{
-		color: #039BE5;
-		text-decoration: underline;
-	}
-</style>
+  <html class="light page-post">
 
 
-<!-- Theme Background Related-->
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>前端工程-自动上传 CDN | CCG&#39;s blog</title>
 
-    <style>
-        body{
-            background-color: #F5F5F5
-        }
-		
-		/* blog_info bottom background */
-        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-            background-color: #fff;
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="ccg,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript">
+  
+
+  <meta name="description" content="最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 CDN 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 CDN 的工具，大大减少了重复性的工作。 当时用的是 grunt，所以写的是 grunt 的插件，用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端工程-自动上传 CDN">
+<meta property="og:url" content="http://localhost:4000/2017/01/03/npm-scripts-cdn/index.html">
+<meta property="og:site_name" content="CCG&#39;s blog">
+<meta property="og:description" content="最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 CDN 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 CDN 的工具，大大减少了重复性的工作。 当时用的是 grunt，所以写的是 grunt 的插件，用法">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-15T09:21:19.598Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端工程-自动上传 CDN">
+<meta name="twitter:description" content="最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 CDN 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 CDN 的工具，大大减少了重复性的工作。 当时用的是 grunt，所以写的是 grunt 的插件，用法">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
 
 
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
-<!-- Fade Effect -->
-
-    <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
-
-        .fade.out{
-            opacity: 0;
-        }
-    </style>
-
-	<script src="/js/jquery.min.js"></script>
-	
-	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
-	
-	<!-- UC Browser Compatible-->
-	<script>
-		var agent = navigator.userAgent.toLowerCase();
-		if(agent.indexOf('ucbrowser')>0) {
-			document.write('<link rel="stylesheet" href="/css/uc.css">');
-		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-		}
-	</script>
-    
-    <!-- Custom Head -->
-    
 </head>
-	
-	
-
-    <body id="scheme-Paradox">
-
-		
-        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-				
-			
-			
-            <!-- Main Container -->
-            <main class="material-layout__content" id="main">
-				
-                <!-- Top Anchor -->
-                <div id="top"></div>
-				
-				
-                <!-- Hamburger Button -->
-                <button class="MD-burger-icon sidebar-toggle">
-                    <span class="MD-burger-layer"></span>
-                </button>
-				
-				
-                <!-- Post TOC -->
-
-    
-	<!-- Back Button -->
-<!--
-	<div class="material-back" id="backhome-div" tabindex="0">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
-			<i class="material-icons" role="presentation">arrow_back</i>
-			<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple"></span>
-			</span>
-		</a>
-	</div>			
--->
-	<!-- Left aligned menu below button -->
-	<button id="post-toc-trigger-btn"
-			class="mdl-button mdl-js-button mdl-button--icon">
-	  <i class="material-icons">format_list_numbered</i>
-	</button>
-
-	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-		for="post-toc-trigger-btn">
-			
-			
-		
-<!--			<li class="mdl-menu__item">Some Action</li>-->
-	</ul>
+</html>
+<body>
 
 
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
 
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-		
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-	<!-- Paradox Post Header -->
-	
-		<!-- Custom Thumbnail -->
-		<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://honggc.b0.upaiyun.com/blog/aoc7tslb1o8-lauren-mancke.jpg)">
-	
-        <p class="article-headline-p">
-            前端工程-自动上传 CDN
-        </p>
-    </div>
-
-	
-
-				
-				
-					<!-- Paradox Post Info -->
-					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>CCG</strong>
-        <span>1月 03, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-<!--
-    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-        <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-    </button>
--->
-
-    <!-- Qrcode -->
-    
-
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" target="_self">
+            博客
+          </a>
+        </li>
+      
     </ul>
-    
+  </div>
 
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-
-    
-    <!-- Leancloud Views -->
-    <a class="post_share-link" href="#">
-        <li class="mdl-menu__item">
-            <span id="/2017/01/03/npm-scripts-cdn/" class="leancloud-views_num" data-flag-title="前端工程-自动上传 CDN">
-     &nbsp;浏览量
-</span>
-        </li>
-    </a>
-    
-
-    
-    
-    <!-- Share Weibo -->
-    
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=前端工程-自动上传 CDN&url=http://localhost:4000//2017/01/03/npm-scripts-cdn/index.html&pic=&searchPic=false&style=simple" target="_blank">
-        <li class="mdl-menu__item">
-            分享到微博
-        </li>
-    </a>
-    
-
-    <!-- Share Twitter -->
-    
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=前端工程-自动上传 CDN&url=http://localhost:4000//2017/01/03/npm-scripts-cdn/index.html&via=CCG" target="_blank">
-        <li class="mdl-menu__item">
-            分享到 Twitter
-        </li>
-    </a>
-    
-
-    <!-- Share Google+ -->
-    
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://localhost:4000//2017/01/03/npm-scripts-cdn/index.html" target="_blank">
-        <li class="mdl-menu__item">
-            分享到 Google+
-        </li>
-    </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
 
 </div>
 
-				
 
-                <!-- Post Content -->
-                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-	
-		<p>最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 CDN 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 CDN 的工具，大大减少了重复性的工作。</p>
-<p>当时用的是 grunt，所以写的是 <a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="external">grunt 的插件</a>，用法好简单，在 grunt build 完之后，执行 grunt enai_upyun 就可以把生成好的目录中的所有文件都上传到 CDN 上，好方便有木有。</p>
-<p>后来我们改用 webpack 作为构建工具，所以我用了类似的方法写了一个 <a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="external">npm script 版</a>的上传工具，用法也差不多，后来我结合了 make 组合了下构建命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">build:</div><div class="line">	npm run build</div><div class="line"></div><div class="line">upload-upyun: build </div><div class="line">	npm run enaiUpyun</div><div class="line">	</div><div class="line">release: </div><div class="line">	make upload-upyun</div></pre></td></tr></table></figure>
+
+
+<div class="content content-post CENTER">
+   <article id="post-npm-scripts-cdn" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">前端工程-自动上传 CDN</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.01.03</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>CCG</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2017/01/03/npm-scripts-cdn/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>最近有个朋友跟我说到每次上线好麻烦，项目每次 build 完之后都需要打开 CDN 的工具来上传静态的文件，然后复制 CDN 的 URL 进行在相应的位置进行替换。我突然想起了我一年前也碰到类似的问题，当时我还没有操作 CDN 的权限还要别人帮忙上传，上一次线十分的麻烦。于是当时做了个自动化上传 CDN 的工具，大大减少了重复性的工作。</p>
+<p>当时用的是 grunt，所以写的是 <a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="noopener">grunt 的插件</a>，用法好简单，在 grunt build 完之后，执行 grunt enai_upyun 就可以把生成好的目录中的所有文件都上传到 CDN 上，好方便有木有。</p>
+<p>后来我们改用 webpack 作为构建工具，所以我用了类似的方法写了一个 <a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="noopener">npm script 版</a>的上传工具，用法也差不多，后来我结合了 make 组合了下构建命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">build:</span><br><span class="line">	npm run build</span><br><span class="line"></span><br><span class="line">upload-upyun: build </span><br><span class="line">	npm run enaiUpyun</span><br><span class="line">	</span><br><span class="line">release: </span><br><span class="line">	make upload-upyun</span><br></pre></td></tr></table></figure>
 <p>只需要 make release 一句命令就好了。懒的不行哈哈哈哈哈。</p>
 <p>虽然我写的都是基于 upyun 的，但比如其他的服务比如七牛什么的都有相应的 SDK，可以根据自己的需求扩展一下，我把代码都放到了 Github 上了：</p>
 <ul>
-<li><a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="external">grunt-cdn-upyun</a></li>
-<li><a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="external">npm-scripts-cdn</a></li>
+<li><a href="https://github.com/hongguancheng/grunt-enai-upyun" target="_blank" rel="noopener">grunt-cdn-upyun</a></li>
+<li><a href="https://github.com/hongguancheng/npm-scripts-cdn" target="_blank" rel="noopener">npm-scripts-cdn</a></li>
 </ul>
 
-	
-	
-	
-	
-</div>
-				
-				
+    
+  </div>
+</article>
 
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用多说评论 -->
-    <link rel="stylesheet" href="/css/duoshuo.min.css">
-<style>
-    #ds-thread #ds-reset .ds-post-button{
-        background-color: #039BE5 !important;
-    }
-    #ds-wrapper #ds-reset .ds-icons-32{
-        background-color: #039BE5 !important;
-    }
-    #ds-reset .ds-highlight {
-        color: #039BE5 !important;
-    }
-</style>
-<div id="comments">
-    <!-- 多说评论框 start -->
-        <div class="ds-thread" 
-            data-thread-key="2017/01/03/npm-scripts-cdn/" 
-            data-url="http://localhost:4000/2017/01/03/npm-scripts-cdn/"
-            data-title="前端工程-自动上传 CDN"></div>
-    <!-- 多说评论框 end -->
 </div>
 
 
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    
-    <!-- Prev Nav -->
-    
-        <a href="/2017/01/09/再学一遍 this/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2016/12/30/2016-summary/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-        </div>
-    </div>
-
-				
-				
-					<!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay "></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
-	<div id="sidebar-main">
-	    <!-- Sidebar Header -->
-		<div class="sidebar-header header-cover" style="background-image: url(http://honggc.b0.upaiyun.com/blog/daily_pic.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-    <i class="material-icons">clear_all</i>
-    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="http://honggc.b0.upaiyun.com/blog/avatar.jpg" alt="CCG's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        guancheng.hong@gmail.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-		<!-- Sidebar Navigation  -->
-		<ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-			
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        Email Me
-                    </a>
-                </li>
-            
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">微信扫一扫，支持一下</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/p1.jpg" alt="">
+          </li>
+        
         </ul>
-    </li>
-
-    <!-- Homepage -->
-    <li id="sidebar-first-li">
-        <a href="/" target="_self">
-            <i class="material-icons sidebar-material-icons">home</i>
-             主页
-        </a>
-    </li>
-
-    <!-- I'm Feeling Lucky -->
-<!--
-    <li class="dropdown">
-        <a href="" target="_self">
-            <i class="material-icons sidebar-material-icons">explore</i>
-             sidebar.imlucky
-        </a>
-    </li>
--->
+      </div>
+    </div>
+  </div>
 
 
-    <!-- Archives  -->
-    <li class="dropdown">
-        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons sidebar-material-icons">inbox</i>
-             归档
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a>
-        </ul>
-    </li>
-
-    <!-- Categories  -->
-    
-
-    <!-- Divider -->
-    <li class="divider"></li>
 
 
-    <!-- Pages  -->
-	
-
-    <!-- Article Numebr  -->
-    <li>
-        <a href="/archives">
-             文章总数
-             <span class="sidebar-badge">5</span>
-        </a>
-    </li>
-</ul>
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
 
 
-		<!-- Sidebar Divider -->
-		<div class="sidebar-divider"></div>
-
-		<!-- Sidebar Footer -->
-		<!-- 
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :) 
--->
-
-<!-- Theme Material -->
-<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		主题 - Material
-		<span class="sidebar-badge badge-circle">i</span>
-	</div>
-</a>
-
-<!-- Help & Support -->
-<!--
-<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		sidebar.help
-		<span class="mdl-button__ripple-container">
-			<span class="mdl-ripple"></span>
-		</span>
-	</div>
-</a>
--->
-
-<!-- Feedback -->
-<!--
-<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.feedback
-                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>
--->
-
-<!-- Abount Theme -->
-<!--
-<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.about_theme
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>-->
-
-	</div>
-    
-    <!-- Sidebar Sponsor -->
-    
 
 
-</aside>
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" target="_self">
+              博客
+            </a>
+          </li>
+        
+      </ul>
 
-				
-				
-				
-					<!-- Footer Top Button -->
-					<div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-				
-				
-				<!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-	
-	
-		<!-- Paradox Footer Left Section -->
-		<div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-    
-
-    <!-- Facebook -->
-    
-    
-
-    <!-- Google + -->
-    
-    
-
-    <!-- Weibo -->
-    
-    
-
-    <!-- Instagram -->
-    
-    
-
-    <!-- Tumblr -->
-    
-    
-
-    <!-- Github -->
-    
-    <a href="https://github.com/hongguancheng" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(http://honggc.b0.upaiyun.com/blog/footer/footer_ico-github.png);">
-        <span class="visuallyhidden">Github</span>
-    </button></a>
-    
-
-    <!-- LinkedIn -->
-    
-    
+    </div>
+  </div>
 </div>
 
 
-		<!--Copyright-->
-		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;CCG's blog</div>
 
-		<!-- Paradox Footer Right Section -->
-
-		<!-- 
-		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-		It will not impact the appearance and can give developers a lot of support :)
-
-		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-		它不会影响美观并可以给开发者很大的支持。 :) 
-		-->
-
-		<div class="mdl-mini-footer--right-section">
-			<div>
-				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-			</div>
-		</div>
-	
+  
+      <div class="fexo-comments comments-post">
     
-</footer>
-                
-				<!-- Import File -->
-<script src="/js/highlight.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
 
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
+  <script>
+    var disqus_shortname = 'forsigner';
     
-    $('#nprogress .bar').css({
-        'background': '#FF4081'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
-    });
+    var disqus_url = 'http://localhost:4000/2017/01/03/npm-scripts-cdn/';
     
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
 
 
 
 
-    <!-- Leancloud -->
-	<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-	<script>
-		AV.initialize("qzuoudpCTsHKRpMt0TN3uscI-gzGzoHsz", "Ky3lBkf8TOgQESJSlEIEywK1");
-	</script>
-    <script>
-	function showTime(Counter) {
-		var query = new AV.Query(Counter);
-		$(".leancloud-views_num").each(function() {
-			var url = $(this).attr("id").trim();
-			query.equalTo("url", url);
-			query.find({
-				success: function(results) {
-					if (results.length == 0) {
-						var content = '0 ' + $(document.getElementById(url)).text();
-						$(document.getElementById(url)).text(content);
-						return;
-					}
-					for (var i = 0; i < results.length; i++) {
-						var object = results[i];
-						var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-						$(document.getElementById(url)).text(content);
-					}
-				},
-				error: function(object, error) {
-					console.log("Error: " + error.code + " " + error.message);
-				}
-			});
+  </div>
 
-		});
-	}
+  
 
-	function addCount(Counter) {
-		var Counter = AV.Object.extend("Counter");
-		url = $(".leancloud-views_num").attr('id').trim();
-		title = $(".leancloud-views_num").attr('data-flag-title').trim();
-		var query = new AV.Query(Counter);
-		query.equalTo("url", url);
-		query.find({
-			success: function(results) {
-				if (results.length > 0) {
-					var counter = results[0];
-					counter.fetchWhenSave(true);
-					counter.increment("time");
-					counter.save(null, {
-						success: function(counter) {
-							var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-							$(document.getElementById(url)).text(content);
-						},
-						error: function(counter, error) {
-							console.log('Failed to save Visitor num, with error message: ' + error.message);
-						}
-					});
-				} else {
-					var newcounter = new Counter();
-					newcounter.set("title", title);
-					newcounter.set("url", url);
-					newcounter.set("time", 1);
-					newcounter.save(null, {
-						success: function(newcounter) {
-							console.log("newcounter.get('time')="+newcounter.get('time'));
-							var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-							$(document.getElementById(url)).text(content);
-						},
-						error: function(newcounter, error) {
-							console.log('Failed to create');
-						}
-					});
-				}
-			},
-			error: function(error) {
-				console.log('Error:' + error.code + " " + error.message);
-			}
-		});
-	}
-	$(function() {
-		var Counter = AV.Object.extend("Counter");
-		if ($('.leancloud-views_num').length == 1) {
-			addCount(Counter);
-		} else if ($('.post-title-link').length > 1) {
-			showTime(Counter);
-		}
-	}); 
-</script>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
 
-
-
-
-
-    <!-- 多说公共 js 代码 start -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:"ccg"};
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = 'https://static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0] 
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
-    <!-- 多说公共 js 代码 end -->
-
-
-
-
-<!-- Swiftye -->
-
-
-<!-- Local Search-->
-
-	<script>
-	var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var str='<ul class=\"search-result-list\">';                
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length <= 0) {
-                    return;
-                }
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title < 0 && index_content < 0 ){
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ data_title;
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out characters
-                            var start = first_occur - 6;
-                            var end = first_occur + 6;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 10;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substr(start, end); 
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
-                            })
-                            str += "<p class=\"search-result\">" + match_content +"...</p>" +"</a>";
-                        }
-                    }
-                })
-                $resultContent.innerHTML = str;
-            })
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
         }
-    })
-}
-</script>
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
 
-	<script>
-        var inputArea = document.querySelector("#search");
-        var getSearchFile = function(){
-            var path = "search.xml";
-            searchFunc(path, 'search', 'local-search-result');
-        }
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
 
-        if(inputArea != null) inputArea.onfocus = function(){ getSearchFile() }
-	</script>
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
     });
+  }
 </script>
 
-<!-- MathJax Load-->
-
-
-            </main>
-        </div>
-		
-    </body>
-		
-	
+</body>
 </html>
